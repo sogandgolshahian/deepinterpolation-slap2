@@ -1,10 +1,10 @@
-# 🧠 DeepInterpolation for SLAP2 Microscopy
+# DeepInterpolation for SLAP2 Microscopy
 
 This repository contains the complete codebase and evaluation scripts used for the project:
 
 **"Denoising SLAP2 Two-Photon Microscopy Images of Tadpole Neurons using DeepInterpolation."**
 
-## 🔬 Overview
+## Overview
 
 This project adapts **DeepInterpolation**, a self-supervised denoising framework developed by the Allen Institute, to high-speed SLAP2 two-photon microscopy data of *Xenopus* tadpole neurons. The goal is to remove random noise and preserve neuronal structure without the need for ground-truth clean images.
 
@@ -15,7 +15,7 @@ Model performance was evaluated across several SLAP2 imaging scenarios:
 - Synthetic data with known clean-noisy ground truth
 - Volumetric recordings with motion artifacts
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ├── training/
@@ -31,13 +31,18 @@ Model performance was evaluated across several SLAP2 imaging scenarios:
 │   ├── calculate_ssim_synthetic_data.py
 │   └── losses_plots.py
 ├── results/
-│   └── [optional: figures and evaluation outputs]
+│   └── [new models, inference results, filtering results, and evaluation outputs]
 ├── data/
-│   └── (not included – add your own SLAP2 movies)
+│   └── [not included – add your own SLAP2 movies]
+├── pre_trained_models/
+│   ├── condition1_int16                # Fluorescent dye model folder, trained with int16 datatype
+│   ├── condition1_uint16               # Fluorescent dye model folder, trained with uint16 datatype
+│   ├── condition2_int16                # Calcium biosensor model folder, trained with int16 datatype
+│   └── condition2_uint16               # Calcium biosensor model folder, trained with uint16 datatype
 └── README.md
 ```
 
-## 💻 Requirements
+## Requirements
 
 - Python 3.7  
 - TensorFlow 2.4.4  
@@ -48,7 +53,7 @@ Model performance was evaluated across several SLAP2 imaging scenarios:
   - 48 GB RAM
   - NVIDIA RTX 3070 GPU
 
-## 🧠 Models
+## Models
 
 Two DeepInterpolation models were trained independently:
 - **Condition 1:** Fluorescent dye recordings (baseline morphology)
@@ -60,21 +65,21 @@ Each condition has **two versions** of the model:
 
 This is because DeepInterpolation internally converts all inputs to `float32`, and proper handling of signed vs. unsigned data types during preprocessing and normalization is essential. To ensure compatibility and numerical consistency across different datasets, both versions are provided.
 
-## 📊 Evaluation
+## Evaluation
 
 The following evaluation scripts are included:
 - **Signal-to-Noise Ratio (SNR)** calculation using Otsu-based region segmentation
 - **Structural Similarity Index (SSIM)** for synthetic datasets with known ground truth
 - **Qualitative comparisons** across raw, filtered, and DeepInterpolated frames
 
-Note: Figures and thesis report are not included in this repository.
+Note: Figures and the thesis report are not included in this repository.
 
-## ⚙️ Installation and Setup
+##  Installation and Setup
 
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/deepinterpolation_slap2.git
+git clone https://github.com/sogandgolshahian/deepinterpolation_slap2.git
 cd deepinterpolation_slap2
 ```
 
@@ -82,18 +87,18 @@ cd deepinterpolation_slap2
    🔗 https://github.com/AllenInstitute/deepinterpolation
 
 3. Refer to this Google Doc for additional installation and configuration steps:  
-   📄 [INSERT YOUR GOOGLE DOC LINK HERE]
+   🔗 [DeepInterpolation Installation Guide](https://docs.google.com/document/d/1uuxpBZ9rOtCi1Z3E38eFeHIHoIgq_9uufzkGnQk7jMg/edit?usp=sharing)
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 After installing DeepInterpolation and its dependencies:
 
 - Edit the training and inference scripts (`train_conditionX.py` and `inference_conditionX.py`) to set the correct file paths for:
-  - `train_json_path`
-  - `output_file`
-  - `input_file_path`
+  - input file path(s)
+  - output file path
+  - other paths/code snippets labelled with "Change this"
 
 ```bash
 # Train model (Condition 1 - Fluorescent Dye)
@@ -118,13 +123,13 @@ python evaluation/calculate_ssim_synthetic_data.py
 
 ---
 
-## 📎 License
+## License
 
 MIT License
 
 ---
 
-## ✨ Acknowledgments
+## Acknowledgments
 
 - Dr. Kurt Haas and the Haas Lab at UBC for providing SLAP2 microscopy data and research mentorship  
 - The Allen Institute for Neural Dynamics for developing the original DeepInterpolation framework  
