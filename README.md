@@ -18,27 +18,27 @@ Model performance was evaluated across several SLAP2 imaging scenarios:
 ## Repository Structure
 
 ```
-├── training/
-│   ├── train_condition1.py             # Fluorescent dye model training
-│   └── train_condition2.py             # Calcium biosensor model training
-├── inference/
-│   ├── inference_condition1.py
-│   └── inference_condition2.py
-├── filtering/
-│   └── traditional_filtering.py        # Gaussian and Wavelet filtering
+├── data/
+│   └── [not included – add your directory and include your SLAP2 movies]
 ├── evaluation/
 │   ├── calculate_snr.py
 │   ├── calculate_ssim_synthetic_data.py
 │   └── losses_plots.py
-├── results/
-│   └── [not included - add your own directory to save new models, inference results, filtering results, and evaluation outputs]
-├── data/
-│   └── [not included – add your directory and include your SLAP2 movies]
+├── filtering/
+│   └── traditional_filtering.py        # Gaussian and Wavelet filtering
+├── inference/
+│   ├── inference_condition1.py
+│   └── inference_condition2.py
 ├── pre_trained_models/
 │   ├── condition1_int16                # Fluorescent dye model folder, trained with int16 datatype
 │   ├── condition1_uint16               # Fluorescent dye model folder, trained with uint16 datatype
 │   ├── condition2_int16                # Calcium biosensor model folder, trained with int16 datatype
 │   └── condition2_uint16               # Calcium biosensor model folder, trained with uint16 datatype
+├── results/
+│   └── [not included - add your own directory to save new models, inference results, filtering results, and evaluation outputs]
+├── training/
+│   ├── train_condition1.py             # Fluorescent dye model training
+│   └── train_condition2.py             # Calcium biosensor model training
 └── README.md
 ```
 
