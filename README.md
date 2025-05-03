@@ -31,9 +31,9 @@ Model performance was evaluated across several SLAP2 imaging scenarios:
 │   ├── calculate_ssim_synthetic_data.py
 │   └── losses_plots.py
 ├── results/
-│   └── [new models, inference results, filtering results, and evaluation outputs]
+│   └── [not included - add your own directory to save new models, inference results, filtering results, and evaluation outputs]
 ├── data/
-│   └── [not included – add your own SLAP2 movies]
+│   └── [not included – add your directory and include your SLAP2 movies]
 ├── pre_trained_models/
 │   ├── condition1_int16                # Fluorescent dye model folder, trained with int16 datatype
 │   ├── condition1_uint16               # Fluorescent dye model folder, trained with uint16 datatype
