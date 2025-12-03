@@ -87,7 +87,7 @@ cd deepinterpolation_slap2
    🔗 https://github.com/AllenInstitute/deepinterpolation
 
 3. Refer to this Google Doc for additional installation and configuration steps:  
-   🔗 [DeepInterpolation Installation Guide](https://docs.google.com/document/d/1uuxpBZ9rOtCi1Z3E38eFeHIHoIgq_9uufzkGnQk7jMg/edit?usp=sharing)
+   🔗 [DeepInterpolation Installation Guide](https://docs.google.com/document/d/1riQQLffbInYuczhqzsgevhJz5QsM1F9nJdSiYa2tQBc/edit?usp=sharing)
 
 ---
 
